@@ -16,7 +16,7 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('oe_title')]" position="after">
+            <xpath expr="//field[@name='name']/../.." position="inside">
                 <h1 class="mt0">
                     <field name="move_title" placeholder="Title..." />
                 </h1>

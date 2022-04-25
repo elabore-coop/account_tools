@@ -2,7 +2,7 @@
 {
     "name": "Account Quotation Sale Order Invoice Title",
     "category": "Account",
-    "version": "14.0.1.0",
+    "version": "13.0.1.0",
     "summary": "Transfer the Receipt Lost value in invoices and account move lines",
     "author": "Elabore",
     "website": "https://elabore.coop/",
