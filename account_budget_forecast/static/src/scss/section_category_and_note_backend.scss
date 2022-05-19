@@ -1,0 +1,22 @@
+
+// The goal of this file is to contain CSS hacks related to allowing
+// section, category and note on budget forecast.
+
+tr.o_data_row.o_is_budget_line_note,
+tr.o_data_row.o_is_budget_line_note textarea[name="description"],
+div.oe_kanban_card.o_is_budget_line_note {
+    font-style: italic;
+}
+tr.o_data_row.o_is_budget_line_section,
+div.oe_kanban_card.o_is_budget_line_section {
+    font-weight: bold;   
+    background-color: #b59898;
+}
+tr.o_data_row.o_is_budget_line_subsection,
+div.oe_kanban_card.o_is_budget_line_subsection {
+    font-style: italic;
+    background-color: #dbd1d1;
+}
+tr.o_data_row.o_is_budget_line_note {
+    word-break: break-all;
+}
