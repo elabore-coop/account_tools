@@ -38,6 +38,12 @@ class AccountAnalyticAccount(models.Model):
         domain=[("budget_category", "=", "miscellaneous")],
         copy=True,
     )
+    budget_forecast_unplanned_ids = fields.One2many(
+        "budget.forecast",
+        "analytic_id",
+        domain=[("budget_category", "=", "unplanned")],
+        copy=True,
+    )
     project_section_budget_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",

@@ -28,6 +28,7 @@ class BudgetForecast(models.Model):
             ("equipment", "Equipment"),
             ("subcontractors", "Subcontractors"),
             ("miscellaneous", "Miscellaneous"),
+            ("unplanned", "Unplanned"),
         ],
         string=_("Budget Category"),
     )
