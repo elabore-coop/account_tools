@@ -162,15 +162,10 @@ class BudgetForecast(models.Model):
     def _onchange_product_id(self):
         if self.product_id:
             self.description = self.product_id.name
-            if self.display_type == "line_article":
-                self.plan_price = self.product_id.standard_price
-            else:
-                self._calc_plan_price()
+            self._calc_plan_price(True)
         else:
             self.description = ""
             self.plan_price = 0
-            if self.display_type != "line_article":
-                self._calc_plan_price()
 
     def _get_budget_category_label(self):
         categories = dict(self._fields["budget_category"].selection)
@@ -304,17 +299,17 @@ class BudgetForecast(models.Model):
                 record.plan_qty = sum(record.mapped("child_ids.plan_qty"))
 
     @api.depends("child_ids")
-    def _calc_plan_price(self):
+    def _calc_plan_price(self, product_change=False):
         for record in self:
             if record.display_type in ["line_section", "line_subsection"]:
                 if record.child_ids:
                     lst = record.mapped("child_ids.plan_price")
                     if lst and (sum(lst) > 0):
                         record.plan_price = lst and sum(lst)
-                    else:
-                        record.plan_price = record.product_id.standard_price
-                else:
+                elif product_change:
                     record.plan_price = record.product_id.standard_price
+            elif product_change and (record.display_type == "line_article"):
+                record.plan_price = self.product_id.standard_price
             elif record.display_type == "line_note":
                 record.plan_price = 0.00
 
