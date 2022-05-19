@@ -32,6 +32,12 @@ class AccountAnalyticAccount(models.Model):
         domain=[("budget_category", "=", "subcontractors")],
         copy=True,
     )
+    budget_forecast_delivery_ids = fields.One2many(
+        "budget.forecast",
+        "analytic_id",
+        domain=[("budget_category", "=", "delivery")],
+        copy=True,
+    )
     budget_forecast_miscellaneous_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",

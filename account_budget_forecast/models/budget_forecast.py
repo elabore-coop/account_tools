@@ -27,6 +27,7 @@ class BudgetForecast(models.Model):
             ("material", "Material"),
             ("equipment", "Equipment"),
             ("subcontractors", "Subcontractors"),
+            ("delivery", "Delivery"),
             ("miscellaneous", "Miscellaneous"),
             ("unplanned", "Unplanned"),
         ],
