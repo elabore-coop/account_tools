@@ -81,6 +81,7 @@ This module is maintained by ELABORE.
         "views/budget_coefficient.xml",
         "views/budget_coefficient_model.xml",
         "views/product_template_form.xml",
+        "views/project_views.xml",
         "views/hr_employee.xml",
         "views/actions.xml",
         "views/assets.xml",
