@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-	<menuitem id="menu_budget_forecast" action="act_budget_forecast" parent="project.menu_project_config" sequence="20" />
+	<menuitem id="menu_budget_forecast" parent="project.menu_project_config" sequence="20" name="Budget forecast" />
 
-	<menuitem id="menu_budget_forecast_coeff_models" action="act_budget_forecast_coeff_models" parent="project.menu_project_config" sequence="20" />
+	<menuitem id="menu_budget_forecast_lines" action="act_budget_forecast" parent="menu_budget_forecast" sequence="1" name="Budget lines" />
 
-	<menuitem id="menu_budget_forecast_models" action="act_budget_forecast_models" parent="project.menu_project_config" sequence="20" />
+	<menuitem id="menu_budget_forecast_coeff_models" action="act_budget_forecast_coeff_models" parent="menu_budget_forecast" sequence="2" name="Coefficient models" />
 
-	<menuitem id="menu_budget_forecast_model_lines" action="act_budget_forecast_model_lines" parent="project.menu_project_config" sequence="20" />
+	<menuitem id="menu_budget_forecast_models" action="act_budget_forecast_models" parent="menu_budget_forecast" sequence="3" name="Budget models" />
+
+	<menuitem id="menu_budget_forecast_model_lines" action="act_budget_forecast_model_lines" parent="menu_budget_forecast" sequence="4" name="Budget models lines" />
 
 </odoo>
