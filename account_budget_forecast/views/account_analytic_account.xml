@@ -17,6 +17,7 @@
 					<button type="object" class="oe_stat_button" icon="fa-eye" name="displayActualAmounts" string="Hide Actual amounts" attrs="{'invisible' : [('display_actual_amounts', '=', False)]}">
 						<field name="display_actual_amounts" widget="boolean_toggle" />
 					</button>
+					<button type="action" class="oe_stat_button" icon="fa-refresh" name="%(action_budget_forecast_model_choice)d" string="Reset Budget" />
 				</header>
 				<sheet string="Project Budget">
 					<group>

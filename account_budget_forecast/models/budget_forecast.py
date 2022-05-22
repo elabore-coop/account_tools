@@ -16,7 +16,6 @@ class BudgetForecast(models.Model):
         "account.analytic.account",
         "Analytic Account",
         required=True,
-        ondelete="restrict",
         index=True,
         copy=True,
     )
@@ -138,25 +137,24 @@ class BudgetForecast(models.Model):
         parent_ids = self.mapped("parent_id")
         if not child_unlink:
             for record in self:
-                if not record.is_summary and (
-                    record.display_type
-                    in [
-                        "line_section",
-                        "line_subsection",
-                    ]
-                ):
-                    # find similar section/sub_section lines
-                    lines = record.env["budget.forecast"].search(
-                        [
+                if record.display_type in [
+                    "line_section",
+                    "line_subsection",
+                ]:
+                    if record.is_summary:
+                        domain = [("summary_id", "=", record.id)]
+                    else:
+                        domain = [
+                            ("id", "!=", record.id),
                             "|",
                             ("summary_id", "=", record.summary_id.id),
                             ("id", "=", record.summary_id.id),
                         ]
-                    )
+                    # find similar section/sub_section lines
+                    lines = record.env["budget.forecast"].search(domain)
                     for line in lines:
                         line.unlink(True)
         res = super(BudgetForecast, self).unlink()
-        parent_ids.exists()._calc_plan()
         return res
 
     @api.onchange("product_id")

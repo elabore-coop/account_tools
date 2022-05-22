@@ -73,6 +73,7 @@ This module is maintained by ELABORE.
     # always loaded
     "data": [
         "security/ir.model.access.csv",
+        "wizard/budget_forecast_model_choice.xml",
         "views/account_analytic_account.xml",
         "views/account_analytic_account_categories.xml",
         "views/account_invoice.xml",
@@ -80,6 +81,7 @@ This module is maintained by ELABORE.
         "views/budget_forecast.xml",
         "views/budget_coefficient.xml",
         "views/budget_coefficient_model.xml",
+        "views/budget_forecast_model.xml",
         "views/product_template_form.xml",
         "views/project_views.xml",
         "views/hr_employee.xml",
