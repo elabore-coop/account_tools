@@ -290,6 +290,21 @@ class BudgetForecast(models.Model):
             record.plan_amount_with_coeff = record.plan_amount_without_coeff * (
                 1 + record.analytic_id.global_coeff
             )
+            modulo = record.plan_amount_with_coeff % 100
+            if (modulo > 0) and (modulo < 25):
+                record.plan_amount_with_coeff = record.plan_amount_with_coeff - modulo
+            elif (modulo >= 25) and (modulo < 50):
+                record.plan_amount_with_coeff = record.plan_amount_with_coeff + (
+                    50 - modulo
+                )
+            elif (modulo > 50) and (modulo < 75):
+                record.plan_amount_with_coeff = record.plan_amount_with_coeff - (
+                    modulo - 50
+                )
+            elif (modulo >= 75) and (modulo < 100):
+                record.plan_amount_with_coeff = record.plan_amount_with_coeff + (
+                    100 - modulo
+                )
 
     @api.depends("child_ids")
     def _calc_plan_qty(self):
