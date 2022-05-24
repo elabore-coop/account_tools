@@ -263,6 +263,7 @@ class AccountAnalyticAccount(models.Model):
                 "name": section.product_id.name,
                 "product_uom_qty": 1.0,
                 "price_unit": section.plan_amount_with_coeff,
+                "budget_forecast_id": section.id,
             }
             self.env["sale.order.line"].create(values)
         quotation.analytic_account_id = self.id

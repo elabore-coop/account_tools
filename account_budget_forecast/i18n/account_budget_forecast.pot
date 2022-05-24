@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 21:11+0000\n"
-"PO-Revision-Date: 2022-05-23 21:11+0000\n"
+"POT-Creation-Date: 2022-05-24 14:53+0000\n"
+"PO-Revision-Date: 2022-05-24 14:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -111,6 +111,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_ids
 #: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_line__budget_forecast_id
 #: model:ir.model.fields,field_description:account_budget_forecast.field_account_move_line__budget_forecast_id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_sale_order_line__budget_forecast_id
 msgid "Budget Forecast"
 msgstr ""
 
@@ -597,6 +598,11 @@ msgid "Sales Order"
 msgstr ""
 
 #. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: account_budget_forecast
 #: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__display_type__line_section
 #: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast_model_line__display_type__line_section
 #: model:ir.model.fields.selection,name:account_budget_forecast.selection__product_template__budget_level__line_section
@@ -630,6 +636,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__summary_id
 #: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
 msgid "Summary"
+msgstr ""
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_order_form
+msgid "Sync missing budget lines"
 msgstr ""
 
 #. module: account_budget_forecast

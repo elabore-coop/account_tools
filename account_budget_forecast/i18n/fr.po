@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-23 21:09+0000\n"
-"PO-Revision-Date: 2022-05-23 21:09+0000\n"
+"POT-Creation-Date: 2022-05-24 14:52+0000\n"
+"PO-Revision-Date: 2022-05-24 14:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Réel"
 #. module: account_budget_forecast
 #: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__actual_qty
 msgid "Actual Quantity"
-msgstr "Quantité réelle"
+msgstr "Quantité actuelle"
 
 #. module: account_budget_forecast
 #: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
@@ -113,6 +113,7 @@ msgstr "Coefficients de chiffrage"
 #: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_ids
 #: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_line__budget_forecast_id
 #: model:ir.model.fields,field_description:account_budget_forecast.field_account_move_line__budget_forecast_id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_sale_order_line__budget_forecast_id
 msgid "Budget Forecast"
 msgstr "Chiffrage"
 
@@ -180,7 +181,7 @@ msgstr "Modèles de coefficient"
 #. module: account_budget_forecast
 #: model:ir.ui.menu,name:account_budget_forecast.menu_budget_forecast
 msgid "Budget forecast"
-msgstr "Budget prévisionnel"
+msgstr "Lignes de chiffrage"
 
 #. module: account_budget_forecast
 #: model:ir.model.fields,field_description:account_budget_forecast.field_product_product__budget_level
@@ -599,6 +600,11 @@ msgid "Sales Order"
 msgstr "Bon de commande"
 
 #. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: account_budget_forecast
 #: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__display_type__line_section
 #: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast_model_line__display_type__line_section
 #: model:ir.model.fields.selection,name:account_budget_forecast.selection__product_template__budget_level__line_section
@@ -633,6 +639,11 @@ msgstr "Sous-traitants"
 #: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
 msgid "Summary"
 msgstr "Résumé"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_order_form
+msgid "Sync missing budget lines"
+msgstr "Synchroniser les lignes budgétaires manquantes"
 
 #. module: account_budget_forecast
 #: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
@@ -680,7 +691,9 @@ msgstr ""
 #, python-format
 msgid ""
 "You must add an analytic account to build/access the budget forecast screen."
-msgstr "Vous devez ajouter un compte analytic pour construire et accéder au budget prévisionnel"
+msgstr ""
+"Vous devez ajouter un compte analytic pour construire et accéder au budget "
+"prévisionnel"
 
 #. module: account_budget_forecast
 #: model:ir.model,name:account_budget_forecast.model_budget_coefficient_model
