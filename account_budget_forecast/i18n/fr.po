@@ -1,0 +1,727 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_budget_forecast
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-24 14:52+0000\n"
+"PO-Revision-Date: 2022-05-24 14:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_model_wizard
+msgid ""
+"<span class=\"fa fa-info-circle\"/>\n"
+"                    Caution: all current budget lines will be deleted!"
+msgstr ""
+"<span class=\"fa fa-info-circle\"/>\n"
+"                    Attention : toutes les lignes de budget vont être supprimées!"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Actual Amount"
+msgstr "Réel"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__actual_qty
+msgid "Actual Quantity"
+msgstr "Quantité actuelle"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Add a note"
+msgstr "Ajouter une note"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Add a section"
+msgstr "Ajouter une section"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Add a sub-section"
+msgstr "Ajouter une sous-section"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Add an article"
+msgstr "Ajouter un article"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_account_analytic_account
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__analytic_id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_crm_lead__analytic_account
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_account_analytic_line
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__analytic_line_ids
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+msgid "Analytic Lines"
+msgstr "Lignes analytiques"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__display_type__line_article
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__product_template__budget_level__line_article
+msgid "Article"
+msgstr "Article"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__balance
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Balance"
+msgstr "Balance"
+
+#. module: account_budget_forecast
+#: code:addons/account_budget_forecast/models/account_analytic_account.py:0
+#: code:addons/account_budget_forecast/models/account_analytic_account.py:0
+#: code:addons/account_budget_forecast/models/project.py:0
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.crm_lead_analytic_account_view_form
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_account_analytic_account_form
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_order_form
+#, python-format
+msgid "Budget"
+msgstr "Chiffrage"
+
+#. module: account_budget_forecast
+#: code:addons/account_budget_forecast/models/budget_forecast.py:0
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__budget_category
+#, python-format
+msgid "Budget Category"
+msgstr "Caégorie de budget"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_coefficients_ids
+msgid "Budget Coefficients"
+msgstr "Coefficients de chiffrage"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_ids
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_line__budget_forecast_id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_move_line__budget_forecast_id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_sale_order_line__budget_forecast_id
+msgid "Budget Forecast"
+msgstr "Chiffrage"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_delivery_ids
+msgid "Budget Forecast Delivery"
+msgstr "Budget prévisionnel Livraison"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_equipment_ids
+msgid "Budget Forecast Equipment"
+msgstr "Budget prévisionnel Équipement"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_manpower_ids
+msgid "Budget Forecast Manpower"
+msgstr "Budget prévisionnel Main d'oeuvre"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_material_ids
+msgid "Budget Forecast Material"
+msgstr "Budget prévisionnel Matériaux"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_miscellaneous_ids
+msgid "Budget Forecast Miscellaneous"
+msgstr "Budget prévisionnel Divers"
+
+#. module: account_budget_forecast
+#: model:ir.actions.act_window,name:account_budget_forecast.act_budget_forecast_models
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice__budget_forecast_model
+msgid "Budget Forecast Model"
+msgstr "Modèle de budget"
+
+#. module: account_budget_forecast
+#: model:ir.actions.act_window,name:account_budget_forecast.act_budget_forecast_model_lines
+msgid "Budget Forecast Model Lines"
+msgstr "Lignes Modèle de budget"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_subcontractors_ids
+msgid "Budget Forecast Subcontractors"
+msgstr "Budget prévisionnel Sous-traitants"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__budget_forecast_unplanned_ids
+msgid "Budget Forecast Unplanned"
+msgstr "Budget prévisionnel Non prévu"
+
+#. module: account_budget_forecast
+#: model:ir.actions.act_window,name:account_budget_forecast.act_budget_forecast
+msgid "Budget Forecast lines"
+msgstr "Lignes de chiffrage"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__budget_model
+msgid "Budget Model"
+msgstr "Modèle de budget"
+
+#. module: account_budget_forecast
+#: model:ir.actions.act_window,name:account_budget_forecast.act_budget_forecast_coeff_models
+msgid "Budget coefficient models"
+msgstr "Modèles de coefficient"
+
+#. module: account_budget_forecast
+#: model:ir.ui.menu,name:account_budget_forecast.menu_budget_forecast
+msgid "Budget forecast"
+msgstr "Lignes de chiffrage"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_product_product__budget_level
+#: model:ir.model.fields,field_description:account_budget_forecast.field_product_template__budget_level
+msgid "Budget level"
+msgstr "Niveau de chiffrage"
+
+#. module: account_budget_forecast
+#: model:ir.ui.menu,name:account_budget_forecast.menu_budget_forecast_lines
+msgid "Budget lines"
+msgstr "Lignes de budget"
+
+#. module: account_budget_forecast
+#: model:ir.ui.menu,name:account_budget_forecast.menu_budget_forecast_models
+msgid "Budget models"
+msgstr "Modèles de budget"
+
+#. module: account_budget_forecast
+#: model:ir.ui.menu,name:account_budget_forecast.menu_budget_forecast_model_lines
+msgid "Budget models lines"
+msgstr "Lignes de modèles de budget"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_model_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__child_ids
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__child_ids
+msgid "Child"
+msgstr "Enfant"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+msgid "Childs"
+msgstr "Enfants"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Coeff"
+msgstr "Coeff"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__coeff
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__coeff
+msgid "Coefficient"
+msgstr "Coefficient"
+
+#. module: account_budget_forecast
+#: model:ir.ui.menu,name:account_budget_forecast.menu_budget_forecast_coeff_models
+msgid "Coefficient models"
+msgstr "Modèles de coefficient"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_budget_coefficient
+msgid "Coefficients for the order line price calculation"
+msgstr "Coefficiens pour le calcul des montants de chiffrages"
+
+#. module: account_budget_forecast
+#. openerp-web
+#: code:addons/account_budget_forecast/static/src/js/section_category_and_note_fields_backend.js:0
+#, python-format
+msgid "Configure a product"
+msgstr "Configurer un produit"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Create Quotation"
+msgstr "Créer un devis"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__create_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__create_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__create_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model__create_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice__create_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__create_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__create_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__create_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model__create_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice__create_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__budget_category__delivery
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Delivery"
+msgstr "Livraison"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__note
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__note
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__description
+msgid "Description"
+msgstr "Description"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__diff_expenses
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Diff"
+msgstr "Diff"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__display_actual_amounts
+msgid "Display Actual Amounts"
+msgstr "Afficher les montants actuels"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Display Actual amounts"
+msgstr "Afficher les montants actuels"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__display_name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__display_name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__display_name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model__display_name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice__display_name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__display_type
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__display_type
+msgid "Display Type"
+msgstr "Type de ligne"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_model_wizard
+msgid "Empty budget"
+msgstr "Budget vierge"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__budget_category__equipment
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Equipment"
+msgstr "Équipement"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__actual_amount
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Expenses"
+msgstr "Dépenses"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__global_coeff
+msgid "Global coefficient"
+msgstr "Coefficient global"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Hide Actual amounts"
+msgstr "Cacher les montants actuels"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model__id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice__id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__incomes
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Incomes"
+msgstr "Recettes"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Incomes and Balance"
+msgstr "Recettes et Balance"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__is_summary
+msgid "Is Summary"
+msgstr "Est une ligne résumé"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient____last_update
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model____last_update
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast____last_update
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model____last_update
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice____last_update
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__write_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__write_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__write_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model__write_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice__write_uid
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__write_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__write_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__write_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model__write_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_choice__write_date
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/opportunité"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__budget_category__manpower
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Manpower"
+msgstr "Main d'oeuvre"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__budget_category__material
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Material"
+msgstr "Matériaux"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__budget_category__miscellaneous
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Miscellaneous"
+msgstr "Divers"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient__name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_coefficient_model__name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model__name
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__note
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__display_type__line_note
+msgid "Note"
+msgstr "Note"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__opportunity
+msgid "Opportunity"
+msgstr "Opportunitée"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__parent_id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__plan_amount_without_coeff
+msgid "Plan Amount"
+msgstr "Montant prévu"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Plan Amount after Coeff"
+msgstr "Montant prévu avec coeff"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Plan Amount before Coeff"
+msgstr "Montant prévu sans coeff"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__plan_amount_with_coeff
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__plan_amount_with_coeff
+#: model:ir.model.fields,field_description:account_budget_forecast.field_crm_lead__plan_amount_with_coeff
+#: model:ir.model.fields,field_description:account_budget_forecast.field_sale_order__plan_amount_with_coeff
+msgid "Plan Amount with coeff"
+msgstr "Montant prévu avec coeff"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__plan_amount_without_coeff
+msgid "Plan Amount without coeff"
+msgstr "Montant prévu sans coeff"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__plan_price
+msgid "Plan Price"
+msgstr "Prix prévu"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__plan_qty
+msgid "Plan Quantity"
+msgstr "Quantité prévue"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Planned amounts"
+msgstr "Montants prévus"
+
+#. module: account_budget_forecast
+#: code:addons/account_budget_forecast/models/sale_order.py:0
+#, python-format
+msgid "Please set the analytic account"
+msgstr "Renseignez le compte analytique svp"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__product_id
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast_model_line__product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_project_project
+msgid "Project"
+msgstr "Projet"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__project_balance
+msgid "Project Balance"
+msgstr "Balance du projet"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Project Budget"
+msgstr "Chiffrage de projet"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__project_section_budget_ids
+msgid "Project Section Budget"
+msgstr "Lignes de section"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Project management"
+msgstr "Gestion de projet"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__project_managers
+msgid "Project managers"
+msgstr "Managers de projet"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+msgid "Quantities"
+msgstr "Quantités"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: account_budget_forecast
+#: code:addons/account_budget_forecast/models/account_analytic_account.py:0
+#, python-format
+msgid "Quotation"
+msgstr "Devis"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Re-initialize"
+msgstr "Ré-initialiser"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Refresh"
+msgstr "Actualiser"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__remaining_budget
+msgid "Remaining budget"
+msgstr "Budget restant"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_model_wizard
+msgid "Reset : choose the Budget Forecast Model"
+msgstr "Réinitialisation : choisissez votre modèle de budget"
+
+#. module: account_budget_forecast
+#: model:ir.actions.act_window,name:account_budget_forecast.action_budget_forecast_model_choice
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Reset Budget"
+msgstr "Réinitialiser le budget"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__display_type__line_section
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast_model_line__display_type__line_section
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__product_template__budget_level__line_section
+msgid "Section"
+msgstr "Section"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_model_wizard
+msgid "Select"
+msgstr "Sélectionner"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__display_type__line_subsection
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast_model_line__display_type__line_subsection
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__product_template__budget_level__line_subsection
+msgid "Sub-Section"
+msgstr "Sous-section"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__budget_category__subcontractors
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Subcontractors"
+msgstr "Sous-traitants"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_budget_forecast__summary_id
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Summary"
+msgstr "Résumé"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_order_form
+msgid "Sync missing budget lines"
+msgstr "Synchroniser les lignes budgétaires manquantes"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_analytic_budget_forecast
+msgid "Total"
+msgstr "Total"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__total_expenses
+msgid "Total expenses"
+msgstr "Dépenses total"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields,field_description:account_budget_forecast.field_account_analytic_account__total_incomes
+msgid "Total incomes"
+msgstr "Revenus totaux"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+msgid "Totals"
+msgstr "Totaux"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+msgid "Unit prices"
+msgstr "Prix unitaires"
+
+#. module: account_budget_forecast
+#: model:ir.model.fields.selection,name:account_budget_forecast.selection__budget_forecast__budget_category__unplanned
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.budget_forecast_category_miscellaneous
+msgid "Unplanned"
+msgstr "Non prévu"
+
+#. module: account_budget_forecast
+#: code:addons/account_budget_forecast/models/account_analytic_account.py:0
+#, python-format
+msgid ""
+"You are not manager of this project.\n"
+"Please contact the project manager or your Odoo administrator."
+msgstr ""
+"Vous n'êtes pas le gestionnaire de ce projet.\n"
+"Veuiller contacter le gestionnaire du projet ou votre administrateur Odoo."
+
+#. module: account_budget_forecast
+#: code:addons/account_budget_forecast/models/crm_lead.py:0
+#, python-format
+msgid ""
+"You must add an analytic account to build/access the budget forecast screen."
+msgstr ""
+"Vous devez ajouter un compte analytic pour construire et accéder au budget "
+"prévisionnel"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_budget_coefficient_model
+msgid "budget.coefficient.model"
+msgstr "budget.coefficient.model"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_budget_forecast
+msgid "budget.forecast"
+msgstr "budget.forecast"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_budget_forecast_model
+msgid "budget.forecast.model"
+msgstr "budget.forecast.model"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_budget_forecast_model_choice
+msgid "budget.forecast.model.choice"
+msgstr "budget.forecast.model.choice"
+
+#. module: account_budget_forecast
+#: model:ir.model,name:account_budget_forecast.model_budget_forecast_model_line
+msgid "budget.forecast.model.line"
+msgstr "budget.forecast.model.line"
+
+#. module: account_budget_forecast
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_form
+#: model_terms:ir.ui.view,arch_db:account_budget_forecast.view_budget_forecast_tree
+msgid "total"
+msgstr "total"

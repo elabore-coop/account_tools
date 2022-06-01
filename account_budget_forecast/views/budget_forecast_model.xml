@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_budget_forecast_model_tree" model="ir.ui.view">
+        <field name="name">budget.forecast.model.tree</field>
+        <field name="model">budget.forecast.model</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_forecast_model_line_tree" model="ir.ui.view">
+        <field name="name">budget.forecast.model.line.tree</field>
+        <field name="model">budget.forecast.model.line</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="budget_model" />
+                <field name="display_type" />
+                <field name="product_id" />
+                <field name="name" />
+                <field name="parent_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="act_budget_forecast_models" model="ir.actions.act_window">
+        <field name="name">Budget Forecast Model</field>
+        <field name="res_model">budget.forecast.model</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <record id="act_budget_forecast_model_lines" model="ir.actions.act_window">
+        <field name="name">Budget Forecast Model Lines</field>
+        <field name="res_model">budget.forecast.model.line</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

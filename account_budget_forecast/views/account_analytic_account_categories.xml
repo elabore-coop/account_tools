@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="budget_forecast_category_miscellaneous" model="ir.ui.view">
+		<field name="name">budget.forecast.category.miscellaneous</field>
+		<field name="model">account.analytic.account</field>
+		<field name="inherit_id" ref="view_analytic_budget_forecast" />
+		<field name="priority">9999</field>
+		<field name="arch" type="xml">
+			<xpath expr="//notebook" position="inside">
+				<page name="category_manpower" string="Manpower">
+					<field name="budget_forecast_manpower_ids" widget="section_category_and_note_one2many" mode="tree" nolabel="1" context="{'default_budget_category': 'manpower'}">
+						<tree default_order="sequence" editable="bottom">
+							<control>
+								<create string="Add an article" context="{'default_display_type': 'line_article'}" />
+								<create string="Add a note" context="{'default_display_type': 'line_note'}" />
+							</control>
+							<field name="sequence" widget="handle" />
+							<field name="budget_category" invisible="1" optional="hide" />
+							<field name="parent_id" optional="hide" />
+							<field name="display_type" invisible="1" />
+							<field name="name" optional="hide" />
+							<field name="product_id" />
+							<field name="description" optional="show" />
+							<field name="note" optional="hide" />
+							<field name="plan_price" />
+							<field name="plan_qty" />
+							<field name="actual_qty" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="plan_amount_without_coeff" string="Plan Amount before Coeff" />
+							<field name="plan_amount_with_coeff" string="Plan Amount after Coeff" />
+							<field name="actual_amount" string="Actual Amount" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="diff_expenses" string="Diff" optional="hide" />
+							<field name="incomes" string="Incomes" optional="hide" />
+							<field name="balance" string="Balance" optional="hide" />
+						</tree>
+					</field>
+				</page>
+				<page name="category_material" string="Material">
+					<field name="budget_forecast_material_ids" widget="section_category_and_note_one2many" mode="tree" nolabel="1" context="{'default_budget_category': 'material'}">
+						<tree default_order="sequence" editable="bottom">
+							<control>
+								<create string="Add an article" context="{'default_display_type': 'line_article'}" />
+								<create string="Add a note" context="{'default_display_type': 'line_note'}" />
+							</control>
+							<field name="sequence" widget="handle" />
+							<field name="budget_category" invisible="1" optional="hide" />
+							<field name="parent_id" optional="hide" />
+							<field name="display_type" invisible="1" />
+							<field name="name" optional="hide" />
+							<field name="product_id" />
+							<field name="description" optional="show" />
+							<field name="note" optional="hide" />
+							<field name="plan_price" />
+							<field name="plan_qty" />
+							<field name="actual_qty" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="plan_amount_without_coeff" string="Plan Amount before Coeff" />
+							<field name="plan_amount_with_coeff" string="Plan Amount after Coeff" />
+							<field name="actual_amount" string="Actual Amount" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="diff_expenses" string="Diff" optional="hide" />
+							<field name="incomes" string="Incomes" optional="hide" />
+							<field name="balance" string="Balance" optional="hide" />
+						</tree>
+					</field>
+				</page>
+				<page name="category_equipment" string="Equipment">
+					<field name="budget_forecast_equipment_ids" widget="section_category_and_note_one2many" mode="tree" nolabel="1" context="{'default_budget_category': 'equipment'}">
+						<tree default_order="sequence" editable="bottom">
+							<control>
+								<create string="Add an article" context="{'default_display_type': 'line_article'}" />
+								<create string="Add a note" context="{'default_display_type': 'line_note'}" />
+							</control>
+							<field name="sequence" widget="handle" />
+							<field name="budget_category" invisible="1" optional="hide" />
+							<field name="parent_id" optional="hide" />
+							<field name="display_type" invisible="1" />
+							<field name="name" optional="hide" />
+							<field name="product_id" />
+							<field name="description" optional="show" />
+							<field name="note" optional="hide" />
+							<field name="plan_price" />
+							<field name="plan_qty" />
+							<field name="actual_qty" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="plan_amount_without_coeff" string="Plan Amount before Coeff" />
+							<field name="plan_amount_with_coeff" string="Plan Amount after Coeff" />
+							<field name="actual_amount" string="Actual Amount" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="diff_expenses" string="Diff" optional="hide" />
+							<field name="incomes" string="Incomes" optional="hide" />
+							<field name="balance" string="Balance" optional="hide" />
+						</tree>
+					</field>
+				</page>
+				<page name="category_subcontractors" string="Subcontractors">
+					<field name="budget_forecast_subcontractors_ids" widget="section_category_and_note_one2many" mode="tree" nolabel="1" context="{'default_budget_category': 'subcontractors'}">
+						<tree default_order="sequence" editable="bottom">
+							<control>
+								<create string="Add an article" context="{'default_display_type': 'line_article'}" />
+								<create string="Add a note" context="{'default_display_type': 'line_note'}" />
+							</control>
+							<field name="sequence" widget="handle" />
+							<field name="budget_category" invisible="1" optional="hide" />
+							<field name="parent_id" optional="hide" />
+							<field name="display_type" invisible="1" />
+							<field name="name" optional="hide" />
+							<field name="product_id" />
+							<field name="description" optional="show" />
+							<field name="note" optional="hide" />
+							<field name="plan_price" />
+							<field name="plan_qty" />
+							<field name="actual_qty" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="plan_amount_without_coeff" string="Plan Amount before Coeff" />
+							<field name="plan_amount_with_coeff" string="Plan Amount after Coeff" />
+							<field name="actual_amount" string="Actual Amount" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="diff_expenses" string="Diff" optional="hide" />
+							<field name="incomes" string="Incomes" optional="hide" />
+							<field name="balance" string="Balance" optional="hide" />
+						</tree>
+					</field>
+				</page>
+				<page name="category_delivery" string="Delivery">
+					<field name="budget_forecast_delivery_ids" widget="section_category_and_note_one2many" mode="tree" nolabel="1" context="{'default_budget_category': 'delivery'}">
+						<tree default_order="sequence" editable="bottom">
+							<control>
+								<create string="Add an article" context="{'default_display_type': 'line_article'}" />
+								<create string="Add a note" context="{'default_display_type': 'line_note'}" />
+							</control>
+							<field name="sequence" widget="handle" />
+							<field name="budget_category" invisible="1" optional="hide" />
+							<field name="parent_id" optional="hide" />
+							<field name="display_type" invisible="1" />
+							<field name="name" optional="hide" />
+							<field name="product_id" />
+							<field name="description" optional="show" />
+							<field name="note" optional="hide" />
+							<field name="plan_price" />
+							<field name="plan_qty" />
+							<field name="actual_qty" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="plan_amount_without_coeff" string="Plan Amount before Coeff" />
+							<field name="plan_amount_with_coeff" string="Plan Amount after Coeff" />
+							<field name="actual_amount" string="Actual Amount" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="diff_expenses" string="Diff" optional="hide" />
+							<field name="incomes" string="Incomes" optional="hide" />
+							<field name="balance" string="Balance" optional="hide" />
+						</tree>
+					</field>
+				</page>
+				<page name="category_miscellaneous" string="Miscellaneous">
+					<field name="budget_forecast_miscellaneous_ids" widget="section_category_and_note_one2many" mode="tree" nolabel="1" context="{'default_budget_category': 'miscellaneous'}">
+						<tree default_order="sequence" editable="bottom">
+							<control>
+								<create string="Add an article" context="{'default_display_type': 'line_article'}" />
+								<create string="Add a note" context="{'default_display_type': 'line_note'}" />
+							</control>
+							<field name="sequence" widget="handle" />
+							<field name="budget_category" invisible="1" optional="hide" />
+							<field name="parent_id" optional="hide" />
+							<field name="display_type" invisible="1" />
+							<field name="name" optional="hide" />
+							<field name="product_id" />
+							<field name="description" optional="show" />
+							<field name="note" optional="hide" />
+							<field name="plan_price" />
+							<field name="plan_qty" />
+							<field name="actual_qty" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="plan_amount_without_coeff" string="Plan Amount before Coeff" />
+							<field name="plan_amount_with_coeff" string="Plan Amount after Coeff" />
+							<field name="actual_amount" string="Actual Amount" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="diff_expenses" string="Diff" optional="hide" />
+							<field name="incomes" string="Incomes" optional="hide" />
+							<field name="balance" string="Balance" optional="hide" />
+						</tree>
+					</field>
+				</page>
+				<page name="category_unplanned" string="Unplanned">
+					<field name="budget_forecast_unplanned_ids" widget="section_category_and_note_one2many" mode="tree" nolabel="1" context="{'default_budget_category': 'unplanned'}">
+						<tree default_order="sequence" editable="bottom">
+							<control>
+								<create string="Add an article" context="{'default_display_type': 'line_article'}" />
+								<create string="Add a note" context="{'default_display_type': 'line_note'}" />
+							</control>
+							<field name="sequence" widget="handle" />
+							<field name="budget_category" invisible="1" optional="hide" />
+							<field name="parent_id" optional="hide" />
+							<field name="display_type" invisible="1" />
+							<field name="name" optional="hide" />
+							<field name="product_id" />
+							<field name="description" optional="show" />
+							<field name="note" optional="hide" />
+							<field name="plan_price" />
+							<field name="plan_qty" />
+							<field name="actual_qty" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="plan_amount_without_coeff" string="Plan Amount before Coeff" />
+							<field name="plan_amount_with_coeff" string="Plan Amount after Coeff" />
+							<field name="actual_amount" string="Actual Amount" attrs="{'column_invisible' : [('parent.display_actual_amounts', '=', False)]}" />
+							<field name="diff_expenses" string="Diff" optional="hide" />
+							<field name="incomes" string="Incomes" optional="hide" />
+							<field name="balance" string="Balance" optional="hide" />
+						</tree>
+					</field>
+				</page>
+			</xpath>
+		</field>
+	</record>
+</odoo>
