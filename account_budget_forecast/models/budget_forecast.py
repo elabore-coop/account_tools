@@ -173,22 +173,24 @@ class BudgetForecast(models.Model):
                 return val
         return ""
 
+    def _calculate_name(self):
+        for record in self:
+            name = (
+                record.description
+                + " - "
+                + record.product_id.name
+                + " - "
+                + record._get_budget_category_label()
+                + " - "
+                + record.analytic_id.name
+            )
+            return name
+
     @api.onchange("description", "product_id")
     def _compute_name(self):
         for record in self:
             if record.product_id:
-                name = (
-                    record.description
-                    + " - "
-                    + record.product_id.name
-                    + " - "
-                    + record._get_budget_category_label()
-                    + " - "
-                    + record.analytic_id.name
-                )
-                values = {
-                    "name": name,
-                }
+                values = {"name": record._calculate_name()}
                 record.write(values, False)
 
     def _sync_sections_data(self):
