@@ -77,7 +77,6 @@ This module is maintained by ELABORE.
         "wizard/budget_forecast_model_choice.xml",
         "views/account_analytic_account.xml",
         "views/account_analytic_account_categories.xml",
-        "views/account_invoice.xml",
         "views/sale_order.xml",
         "views/budget_forecast.xml",
         "views/budget_coefficient.xml",

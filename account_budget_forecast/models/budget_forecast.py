@@ -19,6 +19,13 @@ class BudgetForecast(models.Model):
         index=True,
         copy=True,
     )
+    analytic_tag = fields.Many2one(
+        "account.analytic.tag",
+        "Analytic tag",
+        index=True,
+        copy=False,
+        ondelete="cascade",
+    )
 
     budget_category = fields.Selection(
         [
@@ -61,9 +68,6 @@ class BudgetForecast(models.Model):
         copy=False,
     )
 
-    analytic_line_ids = fields.One2many(
-        "account.analytic.line", "budget_forecast_id", copy=False
-    )
     actual_qty = fields.Float(
         "Actual Quantity",
         compute="_calc_actual",
@@ -114,6 +118,9 @@ class BudgetForecast(models.Model):
                 "line_subsection",
             ]:
                 record._create_category_sections()
+        record.analytic_tag = self.env["account.analytic.tag"].create(
+            {"name": record._calculate_name()}
+        )
         return records
 
     def _create_category_sections(self):
@@ -192,6 +199,12 @@ class BudgetForecast(models.Model):
             if record.product_id:
                 values = {"name": record._calculate_name()}
                 record.write(values, False)
+
+    @api.onchange("name")
+    def _compute_analytic_tag_name(self):
+        for record in self:
+            if record.analytic_tag:
+                record.analytic_tag.name = record.name
 
     def _sync_sections_data(self):
         for record in self:
@@ -329,29 +342,66 @@ class BudgetForecast(models.Model):
             elif record.display_type == "line_note":
                 record.plan_price = 0.00
 
+    def _find_analytic_lines(self, move_type, with_timesheets=False):
+        self.ensure_one()
+        if with_timesheets:
+            domain = [
+                "|",
+                (
+                    "move_id.move_id.move_type",
+                    "in",
+                    move_type,
+                ),
+                ("timesheet_entry", "=", True),
+            ]
+        else:
+            domain = [
+                (
+                    "move_id.move_id.move_type",
+                    "in",
+                    move_type,
+                )
+            ]
+        analytic_lines = (
+            self.env["account.analytic.line"]
+            .search(domain)
+            .filtered(lambda x: self.analytic_tag in x.tag_ids)
+        )
+        return analytic_lines
+
+    def _find_draft_invoice_lines(self, move_type):
+        self.ensure_one()
+        domain = [
+            ("analytic_account_id", "=", self.analytic_id.id),
+            ("parent_state", "in", ["draft"]),
+            ("move_id.move_type", "in", move_type),
+        ]
+        invoice_lines = (
+            self.env["account.move.line"]
+            .search(domain)
+            .filtered(lambda x: self.analytic_tag in x.analytic_tag_ids)
+        )
+        return invoice_lines
+
     @api.depends("analytic_id.line_ids.amount")
     def _calc_actual(self):
         for record in self:
+            # Section or Sub-section
             if record.display_type in ["line_section", "line_subsection"]:
                 if record.child_ids:
                     # Actual expenses are calculated with the child lines
                     record.actual_qty = sum(record.mapped("child_ids.actual_qty"))
                     record.actual_amount = sum(record.mapped("child_ids.actual_amount"))
+
                     # Incomes are calculated with the analytic lines
-                    line_ids = record.analytic_line_ids.filtered(
-                        lambda x: x.move_id.move_id.move_type
-                        in ["out_invoice", "out_refund"]
+                    line_ids = record._find_analytic_lines(
+                        ["out_invoice", "out_refund", "out_receipt"]
                     )
                     record.incomes = sum(line_ids.mapped("amount"))
-
-                    # Add Invoice lines ids
-                    domain = [
-                        ("analytic_account_id", "=", record.analytic_id.id),
-                        ("parent_state", "in", ["draft", "posted"]),
-                        ("budget_forecast_id", "=", record.id),
-                        ("move_id.move_type", "in", ["out_invoice", "out_refund"]),
-                    ]
-                    invoice_lines = self.env["account.move.line"].search(domain)
+                    # Add Draft Invoice lines ids to incomes
+                    invoice_lines = record._find_draft_invoice_lines(
+                        ["out_invoice", "out_refund"]
+                    )
                     for invoice_line in invoice_lines:
                         if invoice_line.move_id.move_type == "out_invoice":
                             record.incomes = (
@@ -363,25 +413,23 @@ class BudgetForecast(models.Model):
                             )
                     record.balance = record.incomes - record.actual_amount
 
+            # Note
             elif record.display_type == "line_note":
                 record.actual_qty = 0
                 record.actual_amount = 0.00
+
+            # Product
             else:
-                line_ids = record.analytic_line_ids.filtered(
-                    lambda x: x.move_id.move_id.move_type
-                    not in ["out_invoice", "out_refund"]
+                line_ids = record._find_analytic_lines(
+                    ["in_invoice", "in_refund", "in_receipt"], True
                 )
                 record.actual_qty = abs(sum(line_ids.mapped("unit_amount")))
                 record.actual_amount = -sum(line_ids.mapped("amount"))
 
-                # Add Invoice lines ids
-                domain = [
-                    ("analytic_account_id", "=", record.analytic_id.id),
-                    ("parent_state", "in", ["draft", "posted"]),
-                    ("budget_forecast_id", "=", record.id),
-                    ("move_id.move_type", "in", ["in_invoice", "in_refund"]),
-                ]
-                invoice_lines = self.env["account.move.line"].search(domain)
+                # Add Draft Invoice lines ids
+                invoice_lines = record._find_draft_invoice_lines(
+                    ["in_invoice", "in_refund"]
+                )
                 for invoice_line in invoice_lines:
                     if invoice_line.move_id.move_type == "in_invoice":
                         record.actual_qty = record.actual_qty + invoice_line.quantity

@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='name']" position="after">
-                <field name="budget_forecast_id" domain="[('display_type', '=', 'line_article')]" />
+                <field name="tag_ids" /> <!--domain="[('display_type', '=', 'line_article')]" />-->
             </xpath>
         </field>
     </record>

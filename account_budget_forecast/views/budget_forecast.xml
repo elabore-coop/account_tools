@@ -9,8 +9,10 @@
 				<sheet>
 					<group>
 						<group>
+							<field name="name" />
 							<field name="product_id" />
 							<field name="description" />
+							<field name="analytic_tag" />
 						</group>
 						<group>
 							<field name="analytic_id" />
@@ -36,7 +38,8 @@
 						</group>
 					</group>
 					<group string="Analytic Lines">
-						<field name="analytic_line_ids" nolabel="1">
+						<!-- TODO: Ajouter bouton vers vue Tree affichant les lignes analytics -->
+						<!-- <field name="analytic_line_ids" nolabel="1">
 							<tree>
 								<field name="date" />
 								<field name="employee_id" />
@@ -45,7 +48,7 @@
 								<field name="unit_amount" string="Quantity" />
 								<field name="amount" />
 							</tree>
-						</field>
+						</field>-->
 					</group>
 					<group string="Childs" attrs="{'invisible' : [('child_ids','=', False)]}">
 						<field name="child_ids" nolabel="1">

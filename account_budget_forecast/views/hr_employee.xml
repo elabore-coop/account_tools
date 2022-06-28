@@ -8,7 +8,7 @@
 		<field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='task_id']" position="after">
-				<field name="budget_forecast_id" domain="[('display_type', '=', 'line_article')]" />
+				<field name="tag_ids" widget="many2many_tags" /> <!--domain="[('display_type', '=', 'line_article')]" />-->
 			</xpath>
 		</field>
 	</record>
