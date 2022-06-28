@@ -38,17 +38,9 @@
 						</group>
 					</group>
 					<group string="Analytic Lines">
-						<!-- TODO: Ajouter bouton vers vue Tree affichant les lignes analytics -->
-						<!-- <field name="analytic_line_ids" nolabel="1">
-							<tree>
-								<field name="date" />
-								<field name="employee_id" />
-								<field name="product_id" />
-								<field name="name" />
-								<field name="unit_amount" string="Quantity" />
-								<field name="amount" />
-							</tree>
-						</field>-->
+						<button class="oe_highlight" type="object" name="action_view_analytic_lines">
+							Consult analytics lines
+						</button>
 					</group>
 					<group string="Childs" attrs="{'invisible' : [('child_ids','=', False)]}">
 						<field name="child_ids" nolabel="1">

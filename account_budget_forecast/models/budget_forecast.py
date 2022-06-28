@@ -446,3 +446,10 @@ class BudgetForecast(models.Model):
                 record.balance = None
 
             record.diff_expenses = record.plan_amount_with_coeff - record.actual_amount
+
+    def action_view_analytic_lines(self):
+        action = self.env["ir.actions.actions"]._for_xml_id(
+            "analytic.account_analytic_line_action_entries"
+        )
+        action["domain"] = [("tag_ids", "ilike", self.analytic_tag.id)]
+        return action
