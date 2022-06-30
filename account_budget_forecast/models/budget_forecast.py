@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import logging
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
+
 
 _logger = logging.getLogger(__name__)
 
@@ -402,8 +404,17 @@ class BudgetForecast(models.Model):
             record.diff_expenses = record.plan_amount_with_coeff - record.actual_amount
 
     def action_view_analytic_lines(self):
-        action = self.env["ir.actions.actions"]._for_xml_id(
-            "analytic.account_analytic_line_action_entries"
+        self.ensure_one()
+        analytic_lines = (
+            self.env["account.analytic.line"]
+            .search([])
+            .filtered(lambda x: self.analytic_tag in x.tag_ids)
         )
-        action["domain"] = [("tag_ids", "ilike", self.analytic_tag.id)]
-        return action
+        if len(analytic_lines) > 0:
+            action = self.env["ir.actions.actions"]._for_xml_id(
+                "analytic.account_analytic_line_action_entries"
+            )
+            action["domain"] = [("tag_ids", "ilike", self.analytic_tag.id)]
+            return action
+        else:
+            raise UserError(_("There is no analytic lines linked to this budget line"))
