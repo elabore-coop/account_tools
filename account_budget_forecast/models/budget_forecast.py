@@ -418,3 +418,24 @@ class BudgetForecast(models.Model):
             return action
         else:
             raise UserError(_("There is no analytic lines linked to this budget line"))
+
+    def action_view_draft_invoice_lines(self):
+        self.ensure_one()
+        invoice_lines = (
+            self.env["account.move.line"]
+            .search([("parent_state", "in", ["draft"])])
+            .filtered(lambda x: self.analytic_tag in x.analytic_tag_ids)
+        )
+        if len(invoice_lines) > 0:
+            action = self.env["ir.actions.actions"]._for_xml_id(
+                "account.action_account_moves_all_tree"
+            )
+            action["domain"] = [
+                ("analytic_tag_ids", "ilike", self.analytic_tag.id),
+                ("parent_state", "in", ["draft"]),
+            ]
+            return action
+        else:
+            raise UserError(
+                _("There is no draft invoice lines linked to this budget line")
+            )

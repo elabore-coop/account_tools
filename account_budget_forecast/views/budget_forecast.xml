@@ -36,10 +36,17 @@
 							<field name="actual_amount" />
 						</group>
 					</group>
-					<group string="Analytic Lines">
-						<button class="oe_highlight" type="object" name="action_view_analytic_lines">
-							Consult analytics lines
-						</button>
+					<group string="Expenses and Incomes lists">
+						<group string="Analytic Lines">
+							<button class="oe_highlight" type="object" name="action_view_analytic_lines">
+								List analytics lines
+							</button>
+						</group>
+						<group string="Draft invoice lines">
+							<button class="oe_highlight" type="object" name="action_view_draft_invoice_lines">
+								List draft invoce lines
+							</button>
+						</group>
 					</group>
 					<group string="Childs" attrs="{'invisible' : [('child_ids','=', False)]}">
 						<field name="child_ids" nolabel="1">
