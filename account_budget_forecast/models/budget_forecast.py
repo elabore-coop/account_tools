@@ -68,13 +68,6 @@ class BudgetForecast(models.Model):
         copy=False,
     )
 
-    actual_qty = fields.Float(
-        "Actual Quantity",
-        compute="_calc_actual",
-        store=True,
-        compute_sudo=True,
-        copy=False,
-    )
     actual_amount = fields.Float(
         "Expenses",
         compute="_calc_actual",
@@ -390,7 +383,6 @@ class BudgetForecast(models.Model):
             if record.display_type in ["line_section", "line_subsection"]:
                 if record.child_ids:
                     # Actual expenses are calculated with the child lines
-                    record.actual_qty = sum(record.mapped("child_ids.actual_qty"))
                     record.actual_amount = sum(record.mapped("child_ids.actual_amount"))
 
                     # Incomes are calculated with the analytic lines
@@ -415,7 +407,6 @@ class BudgetForecast(models.Model):
 
             # Note
             elif record.display_type == "line_note":
-                record.actual_qty = 0
                 record.actual_amount = 0.00
 
             # Product
@@ -423,7 +414,6 @@ class BudgetForecast(models.Model):
                 line_ids = record._find_analytic_lines(
                     ["in_invoice", "in_refund", "in_receipt"], True
                 )
-                record.actual_qty = abs(sum(line_ids.mapped("unit_amount")))
                 record.actual_amount = -sum(line_ids.mapped("amount"))
 
                 # Add Draft Invoice lines ids
@@ -432,12 +422,10 @@ class BudgetForecast(models.Model):
                 )
                 for invoice_line in invoice_lines:
                     if invoice_line.move_id.move_type == "in_invoice":
-                        record.actual_qty = record.actual_qty + invoice_line.quantity
                         record.actual_amount = (
                             record.actual_amount + invoice_line.price_subtotal
                         )
                     elif invoice_line.move_id.move_type == "in_refund":
-                        record.actual_qty = record.actual_qty - invoice_line.quantity
                         record.actual_amount = (
                             record.actual_amount - invoice_line.price_subtotal
                         )
