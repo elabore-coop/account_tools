@@ -335,93 +335,61 @@ class BudgetForecast(models.Model):
             elif record.display_type == "line_note":
                 record.plan_price = 0.00
 
-    def _find_analytic_lines(self, move_type, with_timesheets=False):
-        self.ensure_one()
-        if with_timesheets:
-            domain = [
-                "|",
-                (
-                    "move_id.move_id.move_type",
-                    "in",
-                    move_type,
-                ),
-                ("timesheet_entry", "=", True),
-            ]
-        else:
-            domain = [
-                (
-                    "move_id.move_id.move_type",
-                    "in",
-                    move_type,
-                )
-            ]
-        analytic_lines = (
-            self.env["account.analytic.line"]
-            .search(domain)
-            .filtered(lambda x: self.analytic_tag in x.tag_ids)
-        )
-        return analytic_lines
-
-    def _find_draft_invoice_lines(self, move_type):
-        self.ensure_one()
-        domain = [
-            ("analytic_account_id", "=", self.analytic_id.id),
-            ("parent_state", "in", ["draft"]),
-            ("move_id.move_type", "in", move_type),
-        ]
-        invoice_lines = (
-            self.env["account.move.line"]
-            .search(domain)
-            .filtered(lambda x: self.analytic_tag in x.analytic_tag_ids)
-        )
-        return invoice_lines
-
     @api.depends("analytic_id.line_ids.amount")
     def _calc_actual(self):
         for record in self:
-            # Section or Sub-section
-            if record.display_type in ["line_section", "line_subsection"]:
+            record.actual_amount = 0.00
+            record.incomes = 0.00
+
+            if record.display_type in [
+                "line_section",
+                "line_subsection",
+                "line_article",
+            ]:
                 if record.child_ids:
-                    # Actual expenses are calculated with the child lines
+                    # Addition of the childs values
                     record.actual_amount = sum(record.mapped("child_ids.actual_amount"))
+                    record.incomes = sum(record.mapped("child_ids.incomes"))
 
-                    # Incomes are calculated with the analytic lines
-                    line_ids = record._find_analytic_lines(
-                        ["out_invoice", "out_refund", "out_receipt"]
-                    )
-                    record.incomes = sum(line_ids.mapped("amount"))
-                    # Add Draft Invoice lines ids to incomes
-                    invoice_lines = record._find_draft_invoice_lines(
-                        ["out_invoice", "out_refund"]
-                    )
-                    for invoice_line in invoice_lines:
-                        if invoice_line.move_id.move_type == "out_invoice":
-                            record.incomes = (
-                                record.incomes + invoice_line.price_subtotal
-                            )
-                        elif invoice_line.move_id.move_type == "out_refund":
-                            record.incomes = (
-                                record.incomes - invoice_line.price_subtotal
-                            )
-                    record.balance = record.incomes - record.actual_amount
-
-            # Note
-            elif record.display_type == "line_note":
-                record.actual_amount = 0.00
-
-            # Product
-            else:
-                line_ids = record._find_analytic_lines(
-                    ["in_invoice", "in_refund", "in_receipt"], True
+                # Retrieve all the analytics lines linked to the current budget line
+                analytic_lines = (
+                    self.env["account.analytic.line"]
+                    .search([])
+                    .filtered(lambda x: record.analytic_tag in x.tag_ids)
                 )
-                record.actual_amount = -sum(line_ids.mapped("amount"))
+                for line in analytic_lines:
+                    if line.move_id:
+                        if line.move_id.move_id.move_type in [
+                            "out_invoice",
+                            "out_refund",
+                            "out_receipt",
+                        ]:
+                            record.incomes = record.incomes + line.amount
+                        elif line.move_id.move_id.move_type in [
+                            "in_invoice",
+                            "in_refund",
+                            "in_receipt",
+                        ]:
+                            record.actual_amount = record.actual_amount - line.amount
+                    elif line.timesheet_entry:
+                        record.actual_amount = record.actual_amount - line.amount
 
-                # Add Draft Invoice lines ids
-                invoice_lines = record._find_draft_invoice_lines(
-                    ["in_invoice", "in_refund"]
+                # Retrieve all the DRAFT invoices linked to the current budget line
+                domain = [
+                    ("analytic_account_id", "=", record.analytic_id.id),
+                    ("parent_state", "in", ["draft"]),
+                ]
+                invoice_lines = (
+                    self.env["account.move.line"]
+                    .search(domain)
+                    .filtered(lambda x: record.analytic_tag in x.analytic_tag_ids)
                 )
                 for invoice_line in invoice_lines:
-                    if invoice_line.move_id.move_type == "in_invoice":
+                    if invoice_line.move_id.move_type == "out_invoice":
+                        record.incomes = record.incomes + invoice_line.price_subtotal
+                    elif invoice_line.move_id.move_type == "out_refund":
+                        record.incomes = record.incomes - invoice_line.price_subtotal
+                    elif invoice_line.move_id.move_type == "in_invoice":
                         record.actual_amount = (
                             record.actual_amount + invoice_line.price_subtotal
                         )
@@ -430,9 +398,7 @@ class BudgetForecast(models.Model):
                             record.actual_amount - invoice_line.price_subtotal
                         )
 
-                record.incomes = None
-                record.balance = None
-
+            record.balance = record.incomes - record.actual_amount
             record.diff_expenses = record.plan_amount_with_coeff - record.actual_amount
 
     def action_view_analytic_lines(self):
