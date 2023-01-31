@@ -15,10 +15,10 @@
         <field name="model">budget.forecast.model.line</field>
         <field name="arch" type="xml">
             <tree editable="top">
-                <field name="budget_model" />
-                <field name="display_type" />
-                <field name="product_id" />
-                <field name="name" />
+                <field name="budget_model" required="True" />
+                <field name="display_type" required="True" />
+                <field name="product_id" required="True" />
+                <field name="name" required="True" />
                 <field name="parent_id" />
             </tree>
         </field>
