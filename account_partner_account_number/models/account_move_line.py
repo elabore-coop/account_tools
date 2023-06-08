@@ -1,0 +1,20 @@
+from odoo import fields, models, _, api
+
+
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+
+    account_number = fields.Char(compute='get_account_number', string="Account Number")
+
+    @api.depends('partner_id','account_id')
+    def get_account_number(self):
+        """
+            assign account number of partner if move line is receivable (Customers) or payable (Suppliers)
+        """
+        for account_move_line in self:
+            if account_move_line.account_id.id == account_move_line.partner_id.property_account_receivable_id.id or \
+                    account_move_line.account_id.id == account_move_line.partner_id.property_account_payable_id.id:                
+                account_move_line.account_number = account_move_line.partner_id.account_number
+            else:
+                account_move_line.account_number = ''
+        
