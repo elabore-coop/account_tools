@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_partner_property_form_account_number" model="ir.ui.view">
+    <record id="view_partner_property_form_account_code" model="ir.ui.view">
         <field name="name">res.partner.property.form.inherit.account.number</field>
         <field name="model">res.partner</field>
         <field name="priority">2</field>
@@ -8,8 +8,8 @@
         <field name="groups_id" eval="[(5,)]"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='accounting']/group" position="inside">
-                <group string="Account number" name="account_number" groups="account.group_account_readonly">
-                    <field name="account_number" />
+                <group string="Account code" name="account_code" groups="account.group_account_readonly">
+                    <field name="account_code" />
                 </group>
             </xpath>
         </field>
