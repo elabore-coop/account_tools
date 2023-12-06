@@ -11,5 +11,5 @@ class ChorusFlow(models.Model):
         for flow in self:
             if flow.status == 'IN_REJETE':
                 for invoice in flow.invoice_ids:
-                    invoice.message_post(_("Chorus flow n°%s rejected.")%(flow.name,))
+                    invoice.message_post(body=_("Chorus flow n°%s rejected.")%(flow.name,))
         return res
