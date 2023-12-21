@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_move_line_search_reconcile_view_inherit" model="ir.ui.view">
+            <field name="name">Account move line search reconcile view inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_reconcile_oca.account_move_line_search_reconcile_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="date" position="after">
+                        <field name="amount_residual" filter_domain="[('amount_residual', 'ilike', self)]"/>
+                    </field>
+                    <field name="name" position="attributes">
+                        <attribute name="filter_domain">['|', '|', '|', '|', ('name', 'ilike', self), ('amount_residual', 'ilike', self), ('ref', 'ilike', self), ('account_id', 'ilike', self), ('partner_id', 'ilike', self)]</attribute>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>
