@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_bank_statement_line_reconcile_view_inherit" model="ir.ui.view">
+            <field name="name">account bank statement line reconcile view inherit</field>
+            <field name="model">account.bank.statement.line</field>
+            <field name="inherit_id" ref="account_reconcile_oca.bank_statement_line_form_reconcile_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='manual_amount']" position="after">
+                    <field name="invoice_line_ids"/>
+                </xpath>               
+            </field>
+        </record>
+    </data>
+</odoo>
