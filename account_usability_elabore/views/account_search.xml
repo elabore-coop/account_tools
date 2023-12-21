@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_move_line_search_reconcile_view_inherit" model="ir.ui.view">
+            <field name="name">Account move line search reconcile view inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_reconcile_oca.account_move_line_search_reconcile_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="name" position="attributes">
+                        <attribute name="filter_domain">['|', '|', '|', ('name', 'ilike', self), ('amount_residual', 'ilike', self), ('ref', 'ilike', self), ('partner_id', 'ilike', self)]</attribute>
+                        <attribute name="string">Montant/Libellé/Partenaire</attribute>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>
