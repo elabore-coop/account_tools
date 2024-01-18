@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-	<record id="act_budget_forecast_coeff_models" model="ir.actions.act_window">
-		<field name="name">Budget coefficient models</field>
-		<field name="res_model">budget.coefficient.model</field>
-		<field name="view_mode">tree</field>
-	</record>
-</odoo>
