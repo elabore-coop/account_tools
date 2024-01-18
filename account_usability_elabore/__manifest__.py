@@ -13,6 +13,7 @@
     'data': [
         'views/account_search.xml',
         'views/account_menu.xml',
+        'views/account_tree_view.xml',
     ],
     'installable': True,
     'auto_install': False,
