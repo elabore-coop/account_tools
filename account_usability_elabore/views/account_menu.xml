@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="deposit_menu"
+        name="Deposit"
+        parent="account.menu_finance"
+        sequence="5"/>
+    <menuitem
+        id="account_cash_deposit.account_cash_deposit_menu"
+        parent="account_usability_elabore.deposit_menu"
+        sequence="1"/>   
+    <menuitem
+        id="account_check_deposit.menu_check_deposit_tree"
+        parent="account_usability_elabore.deposit_menu"
+        sequence="2"/>
+</odoo>
