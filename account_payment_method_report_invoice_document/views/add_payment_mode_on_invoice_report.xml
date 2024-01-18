@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="payment_method_report_invoice_document" name="Payment method on invoice document" inherit_id="account.report_invoice_document" priority="40">
+        <xpath expr="//p[@t-if='o.reference']" position="after">
+            <p t-if="o.payment_mode_id" name="payment_mode">
+                Payment Method : <span t-field="o.payment_mode_id"/>
+            </p>
+        </xpath>
+    </template>
+</odoo>
