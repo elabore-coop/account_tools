@@ -1,7 +1,7 @@
 {
-    'name': 'Account Usability Elabore',
+    'name': 'Account Usability Misc',
     'version': '16.0.1.1.0',
-    'description': 'account usability Elabore : improve account usability in v16',
+    'description': 'account usability misc : improve account usability in v16',
     'summary': '',
     'author': '',
     'website': '',
@@ -20,6 +20,5 @@
     'auto_install': False,
     'application': False,
     'assets': {
-        
     }
 }
