@@ -9,7 +9,7 @@
     "maintainer": "Boris Gallet",
     "license": "AGPL-3",
     "category": "Tools",
-    "summary": "Forbid to delete an account move that has already been validated",
+    "summary": "Forbid to delete an account move that has already been posted",
     # any module necessary for this one to work correctly
     "depends": [
         "base",

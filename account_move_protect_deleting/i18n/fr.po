@@ -19,5 +19,5 @@ msgstr ""
 #. odoo-python
 #: code:addons/account_move_protect_deleting/models/account_move.py:0
 #, python-format
-msgid "You cannot delete this account move because it has been validated."
-msgstr "Vous ne pouvez pas supprimer cette pièce comptable car elle à déjà été validée."
+msgid "You cannot delete this account move because it has been posted."
+msgstr "Vous ne pouvez pas supprimer cette pièce comptable car elle à déjà été confirmée."
