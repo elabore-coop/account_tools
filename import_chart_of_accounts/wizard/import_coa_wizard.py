@@ -30,17 +30,20 @@ class ImportCoaWizard(models.TransientModel):
         for record_data in data_to_import:
             existing_line = self.env['account.account'].search([('code', '=', record_data['code'])], limit=1)
             if existing_line:
-                existing_line.name = record_data['name'] #Do not use write() fonction because it's compute 'reconcile' field
+                existing_line.name = record_data['name']
             else:
                 closest_account = self.find_closest_account(record_data['code'][:3])
-                new_account = self.env['account.account'].create(record_data)
                 if closest_account :
-                    new_account.account_type = closest_account.account_type
-                    new_account.reconcile = closest_account.reconcile
+                    record_data['account_type'] = closest_account.account_type
+                    record_data['reconcile'] = closest_account.reconcile
+                new_account = self.env['account.account'].create(record_data)
 
-        #return {'type': 'ir.actions.act_window_close'}
-        return False
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "account.account",
+            "view_mode": "list"
+            }
             
     def find_closest_account(self, code_prefix):
-        # retourne le premier compte comptable commencant par les 3 memes premiers chiffres
-        return self.env['account.account'].search([('code', 'like', f'{code_prefix}___')],limit=1)
+        # return first code with first tree caracters identical 
+        return self.env['account.account'].search([('code', '=like', f'{code_prefix}%')],limit=1)
