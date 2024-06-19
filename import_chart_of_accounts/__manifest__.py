@@ -1,6 +1,6 @@
 {
     'name': 'Import chart of accounts',
-    'version': '14.0.1.0.0',
+    'version': '14.0.1.1.0',
     'summary': 'while importing the accounts chart, only update account name  of existing accounts and automatise settings for new accounts',
     'description': """
 
@@ -14,6 +14,7 @@ Description
 
 Pendant l'import, chaque ligne est comparée aux comptes comptables présents dans Odoo
 - Si le compte comptable existe déjà dans bdd, seul le nom du compte comptable est mis à jour 
+- Un compte comptable est déjà existant si les 6 premiers chiffres du code comptable sont identique (par ex: le compte 120000 et 12000000 sont les mêmes comptes)
 - Si le compte comptable n'existe pas dans bdd, il est créé.
 - Un compte similaire est recherché dans la bdd à partir des 3 premier chiffres du code comptable.
 - On recherche tous les comptes qui ont les 3 premiers chiffres de son code en commun avec celui du compte nouvellement créé

@@ -28,11 +28,13 @@ class ImportCoaWizard(models.TransientModel):
 
         data_to_import = [row for row in csv_reader]
         for record_data in data_to_import:
-            existing_line = self.env['account.account'].search([('code', '=', record_data['code'])], limit=1)
+            # the account is already existing in Odoo if the 6 first digits are identicales
+            existing_line = self.find_account_with_same_firsts_digits(record_data['code'][:6])
             if existing_line:
-                existing_line.name = record_data['name']
+                existing_line.write(record_data)
             else:
-                closest_account = self.find_closest_account(record_data['code'][:3])
+                # the closest account already existing in Odoo has the first tree digits identicales
+                closest_account = self.find_account_with_same_firsts_digits(record_data['code'][:3])
                 if closest_account :
                     record_data['user_type_id'] = closest_account.user_type_id.id
                     record_data['reconcile'] = closest_account.reconcile
@@ -44,6 +46,5 @@ class ImportCoaWizard(models.TransientModel):
             "view_mode": "list"
             }
             
-    def find_closest_account(self, code_prefix):
-        # return first code with first tree caracters identical 
+    def find_account_with_same_firsts_digits(self, code_prefix):
         return self.env['account.account'].search([('code', '=like', f'{code_prefix}%')],limit=1)

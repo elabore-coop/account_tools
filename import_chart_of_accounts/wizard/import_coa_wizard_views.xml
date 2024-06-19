@@ -19,6 +19,7 @@
                         <p>Pendant l'import, chaque ligne est comparée aux comptes comptables présents dans Odoo
                             <ul>
                                 <li>Si le compte comptable existe déjà dans bdd, seul le nom du compte comptable est mis à jour</li>
+                                <li>Un compte comptable est déjà existant si les 6 premiers chiffres du code comptable sont identique (par ex: le compte 120000 et 12000000 sont les mêmes comptes)</li>
                                 <li>Si le compte comptable n'existe pas dans bdd, il est créé. Puis un compte similaire est recherché dans la bdd,
                                     <br/>le compte comptable nouvellement créé aura le même type et la même autorisation de lettrage.</li>
                             </ul>
