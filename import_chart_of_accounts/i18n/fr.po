@@ -1,0 +1,168 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* import_chart_of_accounts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-29 10:27+0000\n"
+"PO-Revision-Date: 2024-05-29 10:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "<strong>Exemple :</strong>"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "Accounts chart CSV Import Wizard"
+msgstr "Importer un plan comptable"
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__coa_file
+msgid "CSV File"
+msgstr "Fichier CSV"
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "Ce compte comptable n'existe pas déjà dans Odoo, il est créé."
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__filename
+msgid "Filename"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid ""
+"Ici il s'agit de <strong>607000 Achats de marchandise</strong>:<br/>\n"
+"                                Il a pour <strong>Type</strong> Charges car c'est une compte de charges et <strong>Autoriser le lettrage</strong> est à False.<br/>\n"
+"                                Le compte 607730 Epicerie divers sera donc enregistré dans Odoo avec le même paramétrage,<br/>\n"
+"                                c'est-à-dire avec un type Charge et une non autorisation du lettrage"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "Il ne doit comporter que <strong>deux colonnes</strong>"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "Import"
+msgstr "Importer"
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "J'importe le compte comptable <strong>607730 Epicerie divers</strong>"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid ""
+"La deuxième colonne doit s'appeler <strong>name</strong> pour le nom du "
+"compte comptable"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid ""
+"La première colonne doit s'appeler <strong>code</strong> pour le numéro de "
+"compte comptable"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.model.fields,field_description:import_chart_of_accounts.field_import_coa_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "Le fichier téléversé doit être au <strong>format CSV</strong>"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid ""
+"Pendant l'import, chaque ligne est comparée aux comptes comptables présents "
+"dans Odoo"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid "Pour importer le plan comptable :"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid ""
+"Pour le configurer automatiquement, on se fonde sur le compte le plus proche"
+" dans Odoo"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid ""
+"Si le compte comptable existe déjà dans bdd, seul le nom du compte comptable"
+" est mis à jour"
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:import_chart_of_accounts.import_coa_wizard_view
+msgid ""
+"Si le compte comptable n'existe pas dans bdd, il est créé. Puis un compte similaire est recherché dans la bdd,\n"
+"                                    <br/>le compte comptable nouvellement créé aura le même type et la même autorisation de lettrage."
+msgstr ""
+
+#. module: import_chart_of_accounts
+#: model:ir.actions.act_window,name:import_chart_of_accounts.action_import_coa_wizard
+#: model:ir.ui.menu,name:import_chart_of_accounts.import_coa_menu
+msgid "Upload Chart Of Accounts"
+msgstr "Importer un plan comptable"
+
+#. module: import_chart_of_accounts
+#: model:ir.model,name:import_chart_of_accounts.model_import_coa_wizard
+msgid "import.coa.wizard"
+msgstr ""
