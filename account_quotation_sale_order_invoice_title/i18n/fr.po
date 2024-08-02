@@ -1,0 +1,70 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_quotation_sale_order_invoice_title
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-22 08:48+0000\n"
+"PO-Revision-Date: 2022-04-22 08:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_account_move__display_name
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_sale_advance_payment_inv__display_name
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_account_move__id
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_sale_advance_payment_inv__id
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_sale_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_account_bank_statement_line__move_title
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_account_move__move_title
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_account_payment__move_title
+msgid "Invoice Title"
+msgstr "Titre de la facture"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model,name:account_quotation_sale_order_invoice_title.model_account_move
+msgid "Journal Entry"
+msgstr "Pièce comptable"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_account_move____last_update
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_sale_advance_payment_inv____last_update
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model,name:account_quotation_sale_order_invoice_title.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Facture de paiement d'avance"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model,name:account_quotation_sale_order_invoice_title.model_sale_order
+msgid "Sales Order"
+msgstr "Commande"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model:ir.model.fields,field_description:account_quotation_sale_order_invoice_title.field_sale_order__so_title
+msgid "Title"
+msgstr "Titre"
+
+#. module: account_quotation_sale_order_invoice_title
+#: model_terms:ir.ui.view,arch_db:account_quotation_sale_order_invoice_title.view_move_title_form
+#: model_terms:ir.ui.view,arch_db:account_quotation_sale_order_invoice_title.view_order_form
+msgid "Title..."
+msgstr "Titre..."
