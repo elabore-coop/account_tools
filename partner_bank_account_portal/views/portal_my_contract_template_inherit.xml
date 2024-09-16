@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_contract_page_inherit_mandate" name="My Contract inherit mandate"
+        inherit_id="contract.portal_contract_page" customize_show="True" priority="100">
+        <xpath expr="//div[@id='product_information']/div" position="inside">
+            <div t-if="contract.mandate_id" class="row mb-2 mb-sm-1">
+                <div class="col-12 col-sm-4">
+                    <strong>Direct Debit Mandate</strong>
+                </div>
+                <div class="col-12 col-sm-8">
+                    <span
+                        t-field="contract.mandate_id"
+                    />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
