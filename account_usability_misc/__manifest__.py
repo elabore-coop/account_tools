@@ -2,14 +2,15 @@
     'name': 'Account Usability Misc',
     'version': '16.0.1.2.0',
     'description': 'account usability misc : improve account usability in v16',
-    'summary': '',
-    'author': '',
-    'website': '',
+    'summary': 'Various chantes to improve the usability of Account application',
+    'author': 'Elabore',
+    'website': 'https://elabore.coop/',
     'license': 'AGPL-3',
-    'category': '',
+    'category': 'Accounting',
     'depends': [
-        'account','base','account_reconcile_oca','account_check_deposit','account_cash_deposit','account_statement_base',
-
+        'account','base','account_reconcile_oca',
+        'account_check_deposit','account_cash_deposit',
+        'account_statement_base',
     ],
     'data': [
         'security/ir.model.access.csv',

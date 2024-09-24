@@ -36,7 +36,7 @@ Credits
 Contributors
 ------------
 
-* `Elabore <mailto:laetitia.dacosta@elabore.coop>`
+* Laetitia Da Costa
 
 Funders
 -------
