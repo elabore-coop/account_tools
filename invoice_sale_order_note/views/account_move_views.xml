@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_form_invoice_sale_order_note" model="ir.ui.view">
+            <field name="name">account.move.form.invoice.sale.order.note</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="note" string="Notes">
+                        <field name="report_note" nolabel="1" colspan="2" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>
