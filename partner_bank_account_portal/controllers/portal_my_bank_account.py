@@ -1,6 +1,5 @@
-# Copyright 2020 Lokavaluto ()
+# Copyright 2024 Lokavaluto ()
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-import base64
 from odoo import http, tools, _
 from odoo.exceptions import AccessError, MissingError
 from odoo.http import request
@@ -49,44 +48,9 @@ class CustomerPortalBankAccount(CustomerPortal):
         ]
         return fields
 
-    def _get_id_fields(self):
-        fields = [
-            "bank_id",
-        ]
-        return fields
-
-    def _get_main_boolean_bank_account_fields(self):
-        '''Provides the fields for which we must check the presence
-        in form's kw to know the value to save in the partner field.
-        All of them MUST start with "main_".'''
-        fields = []
-        return fields
-
     def _transform_res_partner_fields(self, kw, bank_account_fields, prefix=""):
         '''Transforms kw's values in res_partner fields and values'''
         return {key[len(prefix):]: kw[key] for key in bank_account_fields if key in kw}
-
-    def _cast_id_fields(self, kw, id_fields):
-        '''Cast ids fields in kw's values into a integer'''
-        result = {}
-        for key in id_fields:
-            if key in kw:
-                if kw[key] == '':
-                    result[key] = None
-                elif not isinstance(kw[key], int):
-                    result[key] = int(kw[key])
-                else:
-                    result[key] = kw[key]
-        return result
-
-    def _add_boolean_values(self, values, kw, boolean_fields, prefix=""):
-        for key in boolean_fields:
-            values.update(
-                {
-                    key[len(prefix):]: kw.get(key, "off") == "on",
-                }
-            )
-        return values
 
     def _get_page_saving_bank_account_values(self, kw):
         bank_account_fields = self._get_bank_account_fields()

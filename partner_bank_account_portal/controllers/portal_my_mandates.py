@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import http, _
+from odoo import http
 from odoo.osv import expression
 from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-from odoo.exceptions import AccessError, MissingError
-from collections import OrderedDict
 from odoo.http import request
 
 
@@ -14,7 +12,7 @@ class CustomerPortalMandates(CustomerPortal):
     def _prepare_home_portal_values(self, counters):
         values = super()._prepare_home_portal_values(counters)
         if 'mandate_count' in counters:
-            mandate_count = request.env['account.banking.mandate'].search_count([])
+            mandate_count = request.env['account.banking.mandate'].search_count([('partner_id', '=', request.env.user.partner_id.id)])
             values['mandate_count'] = mandate_count
         return values
 
@@ -36,7 +34,7 @@ class CustomerPortalMandates(CustomerPortal):
         return request.render("partner_bank_account_portal.portal_my_mandates", values)
 
     def _get_mandate_domain(self):
-        return []
+        return [('partner_id', '=', request.env.user.partner_id.id)]
 
     def _prepare_my_mandates_values(self, page, date_begin, date_end, domain=None, url="/my/mandates"):
         values = self._prepare_portal_layout_values()
