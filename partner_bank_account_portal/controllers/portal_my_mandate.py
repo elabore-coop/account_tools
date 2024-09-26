@@ -1,6 +1,5 @@
-# Copyright 2020 Lokavaluto ()
+# Copyright 2024 Lokavaluto ()
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-import base64
 from odoo import http, tools, _
 from odoo.exceptions import AccessError, MissingError
 from odoo.http import request
@@ -51,31 +50,13 @@ class CustomerPortalMandate(CustomerPortal):
         ]
         return fields
 
-    def _get_main_boolean_mandate_fields(self):
-        '''Provides the fields for which we must check the presence
-        in form's kw to know the value to save in the partner field.
-        All of them MUST start with "main_".'''
-        fields = []
-        return fields
-
     def _transform_in_res_partner_fields(self, kw, mandate_fields, prefix=""):
         '''Transforms kw's values in res_partner fields and values'''
         return {key[len(prefix):]: kw[key] for key in mandate_fields if key in kw}
 
-    def _add_boolean_values(self, values, kw, boolean_fields, prefix=""):
-        for key in boolean_fields:
-            values.update(
-                {
-                    key[len(prefix):]: kw.get(key, "off") == "on",
-                }
-            )
-        return values
-
     def _get_page_saving_mandate_values(self, kw):
         mandate_fields = self._get_mandate_fields()
         values = self._transform_in_res_partner_fields(kw, mandate_fields)
-        # boolean_fields = self._get_main_boolean_bank_account_fields()
-        # values = self._add_boolean_values(values, kw, boolean_fields)
         return values
 
     def _get_page_opening_values(self):
@@ -95,12 +76,8 @@ class CustomerPortalMandate(CustomerPortal):
     def portal_my_mandate(
         self,mandate_id=None, access_token=None, redirect=None, **kw
     ):
-        # The following condition is to transform profile_id to an int, as it is sent as a string from the templace "portal_my_profile"
-        # TODO: find a better way to retrieve the profile_id at form submit step
         if not isinstance(mandate_id, int):
             mandate_id = int(mandate_id)
-
-        # Check that the user has the right to see this profile
         try:
             mandate_sudo = self._document_check_access(
                 "account.banking.mandate", mandate_id, access_token
@@ -125,16 +102,8 @@ class CustomerPortalMandate(CustomerPortal):
             values.update({"error": error, "error_message": error_message})
             values.update(kw)
             if not error:
-                # Update main profile
                 new_values = self._get_page_saving_mandate_values(kw)
                 mandate.sudo().write(new_values)
-                # Update public profile
-                # new_values = self._get_page_saving_public_structure_values(kw)
-                # public_profile.sudo().write(new_values)
-                # Update position profile
-                # new_values = self._get_page_saving_position_structure_values(kw)
-                # position_profile.sudo().write(new_values)
-                # End of updates
                 if redirect:
                     return request.redirect(redirect)
                 return request.redirect("/my/mandates")

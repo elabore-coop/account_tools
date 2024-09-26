@@ -15,14 +15,14 @@
                     <tr class="active">
                         <th>IBAN</th>
                         <th>Contact name</th>
-                        <th>Name of IBAN holder if different</th>
+                        <th style="max-width: 15rem;">Name of IBAN holder if different</th>
                         <th>Number of associated mandates</th>
                     </tr>
                 </thead>
                 <tbody>
                     <t t-foreach="bank_accounts" t-as="bank_account">
                         <tr>
-                            <td>
+                            <td  style="min-width: 294px;">
                                 <a
                                     t-attf-href="/my/bank_account/#{bank_account.id}?{{ keep_query() }}">
                                     <span t-field="bank_account.acc_number" />

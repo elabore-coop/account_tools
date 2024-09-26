@@ -14,7 +14,7 @@ class CustomerPortalBankAccounts(CustomerPortal):
     def _prepare_home_portal_values(self, counters):
         values = super()._prepare_home_portal_values(counters)
         if 'bank_account_count' in counters:
-            bank_account_count = request.env['res.partner.bank'].search_count([])
+            bank_account_count = request.env['res.partner.bank'].search_count([('partner_id', '=', request.env.user.partner_id.id)])
             values['bank_account_count'] = bank_account_count
         return values
 
@@ -22,8 +22,6 @@ class CustomerPortalBankAccounts(CustomerPortal):
         res = super()._get_account_searchbar_sortings()
         res['acc_number'] = {'label': _('IBAN'), 'order': 'acc_number'}
         return res
-
-
 
     @http.route(['/my/bank_accounts', '/my/bank_accounts/page/<int:page>'], type='http', auth="user", website=True)
     def portal_my_bank_accounts(self, page=1, date_begin=None, date_end=None, sortby=None, filterby=None, **kw):
@@ -43,7 +41,7 @@ class CustomerPortalBankAccounts(CustomerPortal):
         return request.render("partner_bank_account_portal.portal_my_bank_accounts", values)
 
     def _get_bank_accounts_domain(self):
-        return [('active', '=', True)]
+        return [('active', '=', True),('partner_id', '=', request.env.user.partner_id.id)]
 
 
     def _prepare_my_bank_accounts_values(self, page, date_begin, date_end, sortby, filterby, domain=None, url="/my/bank_accounts"):

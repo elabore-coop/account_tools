@@ -56,7 +56,7 @@ msgstr "Comptes bancaires"
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_home_bank_accounts
 msgid "Bank accounts"
-msgstr "Comptes bancaires"
+msgstr "IBAN"
 
 #. module: partner_bank_account_portal
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
@@ -110,7 +110,7 @@ msgstr "Date du dernier débit"
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_home_menu_contract
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
 msgid "Mandates"
-msgstr "Mandats"
+msgstr "Mandat de prélèvement SEPA"
 
 #. module: partner_bank_account_portal
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
@@ -125,7 +125,7 @@ msgstr "Details du mandat"
 #. module: partner_bank_account_portal
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
 msgid "Name of IBAN holder if different"
-msgstr "Nom du titulaire de l'IBAN si différent :"
+msgstr "Nom du titulaire de l'IBAN si différent"
 
 #. module: partner_bank_account_portal
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
@@ -190,3 +190,8 @@ msgstr "Ce nom est déjà utilisé, veuillez trouver un autre nom."
 #: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
 msgid "records"
 msgstr "enregistrements"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+msgid "<option value=\"\">My bank is not in the list</option>"
+msgstr "<option value=\"\">Ma banque n'est pas dans la liste</option>"

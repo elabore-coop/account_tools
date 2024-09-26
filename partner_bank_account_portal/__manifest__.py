@@ -33,7 +33,6 @@
         "views/portal_my_bank_accounts_template.xml",
         "views/portal_my_bank_account_template.xml",
         "views/portal_my_mandates_template.xml",
-        "views/portal_my_mandate_template.xml",
         "views/portal_my_contract_template_inherit.xml",
     ],
     # only loaded in demonstration mode

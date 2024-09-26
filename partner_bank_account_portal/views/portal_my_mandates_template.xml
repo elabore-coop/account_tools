@@ -14,7 +14,6 @@
                 <thead>
                     <tr class="active">
                         <th>Reference</th>
-                        <th>Format</th>
                         <th>Contact name</th>
                         <th>Signature date</th>
                         <th>Last debit date</th>
@@ -29,16 +28,13 @@
                                 <span t-field="mandate.unique_mandate_reference" />
                             </td>
                             <td>
-                                <span t-field="mandate.format" />
-                            </td>
-                            <td>
                                 <span t-field="mandate.partner_id" />
                             </td>
                             <td>
-                                <span t-field="mandate.last_debit_date" />
+                                <span t-field="mandate.signature_date" />
                             </td>
                             <td>
-                                <span t-field="mandate.signature_date" />
+                                <span t-field="mandate.last_debit_date" />
                             </td>
                             <td>
                                 <span t-field="mandate.state" />
