@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//span[@t-field='o.name']" position="after">
+            <div t-field="o.move_title" />
+        </xpath>
+    </template>
+
+</odoo>

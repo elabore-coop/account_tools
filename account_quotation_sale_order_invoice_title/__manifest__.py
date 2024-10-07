@@ -60,6 +60,8 @@ This module is maintained by ELABORE.
     "data": [
         "views/sale_views.xml",
         "views/account_move_views.xml",
+        "views/account_invoice_report.xml",
+        "views/sale_order_report.xml",
     ],
     "qweb": [],
 }
