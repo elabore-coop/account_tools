@@ -1,6 +1,6 @@
 {
     'name': 'Import chart of accounts',
-    'version': '16.0.1.2.0',
+    'version': '16.0.1.3.0',
     'summary': 'while importing the accounts chart, only update account name  of existing accounts and automatise settings for new accounts',
     'description': '',
     'author': '',

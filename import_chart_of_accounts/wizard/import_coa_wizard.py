@@ -41,11 +41,17 @@ class ImportCoaWizard(models.TransientModel):
             else:
                 # find the closest account already existing in Odoo, it has the same first tree digits
                 # Example : 706100 is the closest account of 706600
-                closest_account = self.find_account_with_same_firsts_digits(record_data['code'][:3])
-                if closest_account :
+                if self.find_account_with_same_firsts_digits(record_data['code'][:3]) :
+                    closest_account = self.find_account_with_same_firsts_digits(record_data['code'][:3])
                     record_data['account_type'] = closest_account.account_type
                     record_data['reconcile'] = closest_account.reconcile
-                new_account = self.env['account.account'].create(record_data)
+                # find the closest account already existing in Odoo, it has the same first digit
+                # Example : the smallest account beginning with 7 will be taken as the account closest to 700000 if no other account begins with 700              
+                elif self.find_account_with_same_firsts_digits(record_data['code'][:1]):
+                    closest_account = self.find_account_with_same_firsts_digits(record_data['code'][:1])
+                    record_data['account_type'] = closest_account.account_type
+                    record_data['reconcile'] = closest_account.reconcile
+                self.env['account.account'].create(record_data)
 
         return {
             "type": "ir.actions.act_window",
