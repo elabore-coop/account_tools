@@ -1,6 +1,6 @@
-======================
-account_usability_misc
-======================
+==============================
+account_usability_deposit_menu
+==============================
 
 Various chantes to improve the usability of Account application
 
@@ -8,15 +8,12 @@ Installation
 ============
 
 Use Odoo normal module installation procedure to install
-``account_usability_misc``.
+``account_usability_deposit_menu``.
 
 Description
 ===========
 
-- Hide Create button in Bank Statement Line view without changing rights
-- Removes the right to unlink bank statements and bank statement lines for all users
-- Changes some french translation
-- On reconcile view : filter account move lines by defaut with journal type
+- Brings together the check and the cash deposit submenus under a common Deposit menu
 
 Known issues / Roadmap
 ======================

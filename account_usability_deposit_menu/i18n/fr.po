@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* account_usability_misc
+# 	* account_usability_deposit_menu
 #
 msgid ""
 msgstr ""
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: account_usability_misc
-#: model_terms:ir.ui.view,arch_db:account_usability_misc.account_move_line_search_reconcile_view_inherit
-msgid "Amount/Name/Partner"
-msgstr "Montant/Libellé/Partenaire"
+#. module: account_usability_deposit_menu
+#: model:ir.ui.menu,name:account_usability_deposit_menu.deposit_menu
+msgid "Deposit"
+msgstr "Dépôt"
+
