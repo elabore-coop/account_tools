@@ -1,6 +1,6 @@
 {
     'name': 'Account Usability Misc',
-    'version': '16.0.1.2.0',
+    'version': '16.0.1.3.0',
     'description': 'account usability misc : improve account usability in v16',
     'summary': 'Various chantes to improve the usability of Account application',
     'author': 'Elabore',
