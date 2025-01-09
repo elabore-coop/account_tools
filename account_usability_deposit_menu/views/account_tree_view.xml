@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_view_tree_inherit_message_attachment" model="ir.ui.view">
+            <field name="name">account view tree inherit message attachment</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_in_invoice_bill_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="state" position="after">
+                        <field name="message_attachment_count"/>
+                    </field>                      
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>
