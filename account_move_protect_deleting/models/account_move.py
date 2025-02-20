@@ -12,16 +12,22 @@ class AccountMove(models.Model):
                         This work the same with Cash deposit
         """
         for rec in self:
-        # search in account.cash.deposit if account move is this one
-            for cash_deposit in rec.env['account.cash.deposit'].search([]):
-                if cash_deposit.move_id == rec:
-                    print (cash_deposit.move_id, rec)
-                    is_cash_deposit = True
 
-            # search in account.check.deposit if account move is this one
-            for check_deposit in rec.env['account.check.deposit'].search([]):
-                if check_deposit.move_id == rec:
-                    is_check_deposit = True
+            is_cash_deposit = False
+            is_check_deposit = False
+
+            # search in account.cash.deposit if account move is this one
+            if rec.env.get('account.cash.deposit'):
+                for cash_deposit in rec.env['account.cash.deposit'].search([]):
+                    if cash_deposit.move_id == rec:
+                        print (cash_deposit.move_id, rec)
+                        is_cash_deposit = True
+
+            # # search in account.check.deposit if account move is this one
+            if rec.env.get('account.check.deposit'):
+                for check_deposit in rec.env['account.check.deposit'].search([]):
+                    if check_deposit.move_id == rec:
+                        is_check_deposit = True
 
             if (
                 rec.posted_before and
