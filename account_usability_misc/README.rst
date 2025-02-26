@@ -13,10 +13,11 @@ Use Odoo normal module installation procedure to install
 Description
 ===========
 
-- Hide Create button in Bank Statement Line view without changing rights
+- Hide Create button in Bank Statement Line views
 - Removes the right to unlink bank statements and bank statement lines for all users
 - Changes some french translation
 - On reconcile view : filter account move lines by defaut with journal type
+- Hide Create button in Bank Statement tree view
 
 Known issues / Roadmap
 ======================
