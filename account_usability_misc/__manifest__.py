@@ -12,6 +12,7 @@
         'account_statement_base',
     ],
     'data': [
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/account_search.xml',
         'views/account_tree_view.xml',

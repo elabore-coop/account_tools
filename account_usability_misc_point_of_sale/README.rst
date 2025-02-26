@@ -1,24 +1,18 @@
-======================
-account_usability_misc
-======================
+====================================
+account_usability_misc_point_of_sale
+====================================
 
-Various chantes to improve the usability of Account application
+
 
 Installation
 ============
 
-Use Odoo normal module installation procedure to install
-``account_usability_misc``.
+``account_usability_misc_point_of_sale`` auto-installs when ``point_of_sale`` and ``account_usability_misc`` are installed
 
 Description
 ===========
 
-- Hide Create button in Bank Statement Line views
-- Removes the right to unlink bank statements and bank statement lines for all users
-- Changes some french translation
-- On reconcile view : filter account move lines by defaut with journal type
-- Hide Create button in Bank Statement tree view
-- Create a technical group with unlink righ on bank statements and bank statement lines
+- Removes the right to unlink bank statements and bank statement lines for all pos users and managers
 
 Known issues / Roadmap
 ======================
