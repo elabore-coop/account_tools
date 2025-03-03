@@ -12,10 +12,12 @@
         'account_statement_base',
     ],
     'data': [
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/account_search.xml',
         'views/account_tree_view.xml',
         "views/bank_statement_line_views.xml",
+        "views/bank_statement_views.xml",        
     ],
     'installable': True,
     'auto_install': False,
